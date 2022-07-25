@@ -1,16 +1,44 @@
-<section class="h-20" style="border: 1px red solid">
-  <img src="src/assets/images/header/logo.png" alt="Logo" />
+<section
+  class="flex h-20 space-x-14 items-center bg-zinc-100"
+  style="border: 1px red solid"
+>
+  <img
+    src="/assets/images/header/logo.png"
+    alt="Logo"
+    class="ml-14 h-16 block"
+  />
 
-  <form class="space-x-14">
-    <input
-      type="text"
-      placeholder="Search over 1,000,000 recipes..."
-      size="30"
-    />
-    <button>
-      <span>Search</span>
-    </button>
+  <form class="flex">
+    <div>
+      <input
+        class="w-96 py-2 px-4 rounded-full"
+        type="text"
+        placeholder="Search over 1,000,000 recipes..."
+        size="30"
+      />
+    </div>
+    <div>
+      <button
+        class="overflow-visible bg-gradient-to-r from-orange-400 to-orange-200 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-full"
+      >
+        <span class="font-primary">Search</span>
+      </button>
+    </div>
   </form>
+  <nav class="ml-3 font-primary">
+    <ul class="flex">
+      <li class="p-4">
+        <button>
+          <span>Add recipe</span>
+        </button>
+      </li>
+      <li class="p-4">
+        <button>
+          <span>Bookmarks</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </section>
 
 <!-- <header class="bg-primary_grey">
