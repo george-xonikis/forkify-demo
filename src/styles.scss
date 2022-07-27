@@ -2,3 +2,16 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+body {
+  background: rgb(251, 219, 137);
+  background: linear-gradient(
+    90deg,
+    rgba(251, 219, 137, 1) 0%,
+    rgba(244, 137, 130, 1) 100%
+  );
+}
+
+.container {
+  @apply grid max-w-screen-lg rounded-xl ml-auto mr-auto mt-16 mb-16;
+}

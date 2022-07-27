@@ -1,25 +1,17 @@
-<section
-  class="flex h-20 space-x-14 items-center bg-zinc-100"
-  style="border: 1px red solid"
->
-  <img
-    src="/assets/images/header/logo.png"
-    alt="Logo"
-    class="mx-14 h-14 block"
-  />
+<section class="flex justify-evenly h-20 items-center bg-zinc-100">
+  <img src="/assets/images/header/logo.png" alt="Logo" class="flex h-14" />
 
-  <form class="flex mx-30">
+  <form class="flex">
     <div>
-      <i class="fa-solid fa-coffee fa-2xl"></i>
       <input
-        class="w-96 py-2 px-4 rounded-full focus:outline-none focus:ring-orange-400 focus:ring-1"
+        class="w-80 py-2 px-4 rounded-full focus:outline-none focus:ring-orange-400 focus:ring-1"
         type="text"
         placeholder="Search over 1,000,000 recipes..."
         size="30"
       />
     </div>
 
-    <div class="mr-14">
+    <div class="basis-1/2">
       <button
         class="bg-gradient-to-r from-orange-400 to-orange-200 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-full"
       >
@@ -27,20 +19,16 @@
       </button>
     </div>
   </form>
-  <nav class="mx-40 font-primary">
-    <ul class="flex ml-4">
-      <li class="p-4 mx-4">
-        <button>
-          <span>Add recipe</span>
-        </button>
-      </li>
-      <li class="p-4 ml-8">
-        <button>
-          <span>Bookmarks</span>
-        </button>
-      </li>
-    </ul>
-  </nav>
+  <div class="flex text-sm font-primary font-bold text-zinc-500">
+    <button class="items-center">
+      <span>ADD RECIPE</span>
+    </button>
+  </div>
+  <div class="flex text-sm font-primary font-bold text-zinc-500">
+    <button class="items-center">
+      <span>BOOKMARKS</span>
+    </button>
+  </div>
 </section>
 
 <!-- <header class="bg-primary_grey">
