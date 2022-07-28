@@ -5,17 +5,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SearchResult } from './content/search-result/search-result.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainwindowComponent } from './mainwindow/mainwindow.component';
+import { RecipeDetailsComponent } from './content/main-window/recipe-details.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopMenuComponent,
-    SidebarComponent,
+    SearchResult,
     FooterComponent,
-    MainwindowComponent,
+    RecipeDetailsComponent,
+    ContentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],

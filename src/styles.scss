@@ -13,13 +13,5 @@ body {
 }
 
 .container {
-  @apply grid max-w-screen-lg rounded-xl ml-auto mr-auto mt-16
-    mb-16;
-}
-
-.inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  height: 100%;
+  @apply grid max-w-screen-lg rounded-xl ml-auto mr-auto mt-16 mb-16;
 }
