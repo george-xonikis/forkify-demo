@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
+  ArrowRight = faArrowRight;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
