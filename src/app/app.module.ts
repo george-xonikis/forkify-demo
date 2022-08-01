@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SearchResult } from './content/search-result/search-result.component';
 import { FooterComponent } from './footer/footer.component';
-import { RecipeDetailsComponent } from './content/main-window/recipe-details.component';
+import { RecipeDetailsComponent } from './content/recipe-details/recipe-details.component';
 import { ContentComponent } from './content/content.component';
 
 @NgModule({

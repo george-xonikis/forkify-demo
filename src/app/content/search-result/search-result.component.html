@@ -1,32 +1,35 @@
-<section class="h-screen bg-white" style="border: 1px red solid">
-
+<section class="h-screen bg-white rounded-bl-xl" style="border: 1px red solid">
   <!-- Test Image -->
   <div class="flex flex-col p-10 font-primary font-bold">
     <figure>
-      <img alt="Test image" src="src/img/test-1.jpg"/>
+      <img alt="Test image" src="src/img/test-1.jpg" />
     </figure>
     <h4 class="text-orange-400">Pasta with Tomato Cream...</h4>
     <p class="text-sm text-zinc-400">The Pioneer Woman</p>
   </div>
 
   <!-- Pagination -->
-  <div class="flex flex-col mt-10 font-primary text-sm" style="float: right; margin-bottom: 40px; margin-right: 20px;">
-    <button class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32">
+  <div class="flex-col font-primary text-sm float-right mt-10 mb-10 mr-5">
+    <button
+      class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
+    >
       <span>Page 2</span>
       <fa-icon [icon]="ArrowRight" class="ml-4"></fa-icon>
     </button>
   </div>
 
   <!-- Copyrights -->
-  <div class="flex flex-col mt-10 font-primary text-slate-400" style="clear: both;">
+  <div
+    class="flex-col pl-10 pr-6 font-primary text-slate-400"
+    style="clear: both"
+  >
     <p class="text-xs">
       &copy; Copyright by
       <a href="https://twitter.com/jonasschmedtman" target="_blank">
-        Jonas Schmedtmann
-      </a>.
+        Jonas Schmedtmann </a
+      >.
       <a href="https://twitter.com/barber_coding">Michail Mengisoglou</a>
       built it with Angular and uses it for his portfolio.
     </p>
   </div>
-
 </section>

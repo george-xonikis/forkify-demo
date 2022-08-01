@@ -1,16 +1,19 @@
-<section class="flex justify-evenly h-20 items-center bg-zinc-100">
+<section class="flex justify-evenly rounded-t-xl h-20 items-center bg-zinc-100">
+  <!-- Logo image -->
   <img src="/assets/images/header/logo.png" alt="Logo" class="flex h-14" />
 
   <form class="flex">
-    <div>
+    <!-- Search Input -->
+    <div class="-mr-10">
       <input
-        class="w-80 py-2 px-4 rounded-full focus:outline-none focus:ring-orange-400 focus:ring-1"
+        class="w-80 py-2.5 px-4 rounded-full focus:outline-none focus:ring-orange-400 focus:ring-1"
         type="text"
         placeholder="Search over 1,000,000 recipes..."
         size="30"
       />
     </div>
 
+    <!-- Search Button -->
     <div class="basis-1/2">
       <button
         class="bg-gradient-to-r from-orange-400 to-orange-200 hover:bg-amber-500 text-white py-2 px-4 rounded-full"
@@ -23,12 +26,16 @@
       </button>
     </div>
   </form>
+
+  <!-- Add Recipe button -->
   <div class="flex text-xs font-primary font-bold text-zinc-500">
     <button class="items-center">
       <fa-icon class="mr-3 text-red-300 text-lg" [icon]="PenToSquare"></fa-icon>
       <span>ADD RECIPE</span>
     </button>
   </div>
+
+  <!-- Bookmarks button -->
   <div class="flex text-xs font-primary font-bold text-zinc-500">
     <button class="items-center">
       <fa-icon class="mr-3 text-red-300 text-lg" [icon]="bookmark"></fa-icon>
