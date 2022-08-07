@@ -1,0 +1,40 @@
+<section
+  class="relative h-screen bg-white rounded-bl-xl"
+  style="border: 1px red solid"
+>
+  <!-- Test Image -->
+  <div class="flex flex-col p-10 font-primary font-bold">
+    <figure>
+      <img alt="Test image" src="src/img/test-1.jpg" />
+    </figure>
+    <h4 class="text-orange-400">Pasta with Tomato Cream...</h4>
+    <p class="text-sm text-zinc-400">The Pioneer Woman</p>
+  </div>
+
+  <!-- Pagination -->
+  <div
+    class="flex-col absolute bottom-8 right-1 font-primary text-sm float-right mt-10 mb-10 mr-5"
+  >
+    <button
+      class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
+    >
+      <span>Page 2</span>
+      <fa-icon [icon]="ArrowRight" class="ml-4"></fa-icon>
+    </button>
+  </div>
+
+  <!-- Copyrights -->
+  <div
+    class="flex-col absolute bottom-4 left-4 px-8 font-primary text-slate-400"
+    style="clear: both"
+  >
+    <p class="text-xs">
+      &copy; Copyright by
+      <a href="https://twitter.com/jonasschmedtman" target="_blank">
+        Jonas Schmedtmann </a
+      >.
+      <a href="https://twitter.com/barber_coding">Michail Mengisoglou</a>
+      built it with Angular and uses it for his portfolio.
+    </p>
+  </div>
+</section>
