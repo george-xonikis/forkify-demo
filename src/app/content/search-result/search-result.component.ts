@@ -27,6 +27,8 @@ export class SearchResult implements OnInit {
     this.maxPage = Math.ceil(this.recipes.length / this.pageSize);
   }
 
+
+
   decrementCurrentPage(): void {
     this.currentPage--;
   }
@@ -36,7 +38,7 @@ export class SearchResult implements OnInit {
   }
 
   getPaginatedResults(): Recipe[] {
-    const clonedRecipes = [...PASTA_RECIPES];
+    const clonedRecipes = [...this.recipes];
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = this.currentPage * this.pageSize - 1;
 

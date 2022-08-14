@@ -9,6 +9,7 @@ import { SearchResult } from './content/search-result/search-result.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecipeDetailsComponent } from './content/recipe-details/recipe-details.component';
 import { ContentComponent } from './content/content.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ContentComponent } from './content/content.component';
     RecipeDetailsComponent,
     ContentComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

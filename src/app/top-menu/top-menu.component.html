@@ -6,16 +6,19 @@
     <!-- Search Input -->
     <div class="-mr-10">
       <input
+        #searchInput
         class="w-80 py-2.5 px-4 rounded-full focus:outline-none focus:ring-orange-400 focus:ring-1"
         type="text"
         placeholder="Search over 1,000,000 recipes..."
         size="30"
+        (input)="updateSearchTextValue(searchInput.value)"
       />
     </div>
 
     <!-- Search Button -->
     <div class="basis-1/2">
       <button
+        (click)="getResults($event)"
         class="bg-gradient-to-r from-orange-400 to-orange-200 hover:bg-amber-500 text-white py-2 px-4 rounded-full"
       >
         <fa-icon
