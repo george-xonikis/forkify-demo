@@ -3,30 +3,47 @@
   style="border: 1px red solid"
 >
   <!-- Recipes -->
-  <div *ngFor="let recipe of recipes"
-       class="flex flex-col p-10 font-primary font-bold">
-    <figure>
-      <img alt="Test image" [src]="recipe.image_url"/>
+  <div
+    *ngFor="let recipe of recipes"
+    class="flex py-5 px-8 font-primary font-bold items-center"
+  >
+    <figure class="mr-4 w-24">
+      <img
+        class="rounded-full opacity-50"
+        alt="Test image"
+        [src]="recipe.image_url"
+      />
     </figure>
-    <h4 class="text-orange-400"> {{ recipe.title }} </h4>
-    <p class="text-sm text-zinc-400"> {{ recipe.publisher }} </p>
+    <div class="flex flex-col w-full items-left py-4 px-0">
+      <h4 class="recipe-title">
+        {{ recipe.title }}
+      </h4>
+      <p class="recipe-publisher">
+        {{ recipe.publisher }}
+      </p>
+    </div>
   </div>
 
   <!-- Pagination -->
-  <div class="flex-col justify-between absolute bottom-8 right-1 font-primary text-sm float-right mt-10 mb-10 mr-5">
-
+  <div
+    class="flex absolute bottom-8 font-primary text-sm float-right mt-10 mb-10 mx-5 w-10/12 justify-between left-3"
+  >
     <!-- Previous Page -->
-    <button *ngIf="currentPage > 1"
-            class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
-            (click)="decrementCurrentPage()">
+    <button
+      *ngIf="currentPage > 1"
+      class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
+      (click)="decrementCurrentPage()"
+    >
       <span>Page {{ currentPage - 1 }}</span>
       <fa-icon [icon]="arrowLeft" class="ml-4"></fa-icon>
     </button>
 
     <!-- Right Button -->
-    <button *ngIf="!maxPage || currentPage < maxPage"
-            class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
-            (click)="incrementCurrentPage()">
+    <button
+      *ngIf="!maxPage || currentPage < maxPage"
+      class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
+      (click)="incrementCurrentPage()"
+    >
       <span>Page {{ currentPage + 1 }}</span>
       <fa-icon [icon]="arrowRight" class="ml-4"></fa-icon>
     </button>
@@ -40,12 +57,10 @@
     <p class="text-xs">
       &copy; Copyright by
       <a href="https://twitter.com/jonasschmedtman" target="_blank">
-        Jonas Schmedtmann
-      </a
+        Jonas Schmedtmann </a
       >.
       <a href="https://twitter.com/barber_coding">Michail Mengisoglou</a>
       built it with Angular and uses it for his portfolio.
     </p>
   </div>
-
 </section>

@@ -1,0 +1,24 @@
+/** TAILWIND */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.recipe-title {
+  @apply text-orange-400 
+  text-sm 
+  uppercase 
+  text-ellipsis 
+  overflow-hidden 
+  whitespace-nowrap 
+  max-w-[12rem];
+}
+
+.recipe-publisher {
+  @apply text-[0.65rem] 
+   uppercase
+    text-zinc-400
+    text-ellipsis 
+    overflow-hidden
+    whitespace-nowrap 
+    max-w-[12rem];
+}
