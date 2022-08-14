@@ -41,13 +41,17 @@ export class SearchResult implements OnInit {
     return clonedRecipes.slice(0, 9);
 
     // DIAVAZEIS TO CURRENT PAGE
-    // function(this.recipes, this.currentPage) {
-    //   return this.recipes.slice((this.currentPage-1)*this.pageSize,(this.currentPage * this.pageSize)-1)
+
     // for(this.currentPage = 1, this.currentPage <= this.maxPage, this.currentPage++){
     //   this.recipes.slice((this.currentPage-1)*this.pageSize,(this.currentPage * this.pageSize)-1)
   }
 
-  // }
+  getRecipeSlice(recipes, currentPage) {
+    return recipes.slice(
+      (currentPage - 1) * this.pageSize,
+      currentPage * this.pageSize - 1
+    );
+  }
   // PERNEIS TO SLICE TOU RECIPES ANALOGA APO TO CURRENT PAGE
   // PX EAN currentPage = 1 => SLICE TOU ARRAY 0-9;
   // PX EAN currentPage = 3 => SLICE TOU ARRAY 20-29;
