@@ -24,7 +24,7 @@ export class SearchResult implements OnInit {
   arrowRight = faArrowRight;
 
   ngOnInit() {
-    this.maxPage = Math.ceil(this.recipes.length / this.pageSize) + 1;
+    this.maxPage = Math.ceil(this.recipes.length / this.pageSize);
   }
 
   decrementCurrentPage(): void {
@@ -37,23 +37,10 @@ export class SearchResult implements OnInit {
 
   getPaginatedResults(): Recipe[] {
     const clonedRecipes = [...PASTA_RECIPES];
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = this.currentPage * this.pageSize - 1;
 
-    return clonedRecipes.slice(0, 9);
-
-    // DIAVAZEIS TO CURRENT PAGE
-
-    // for(this.currentPage = 1, this.currentPage <= this.maxPage, this.currentPage++){
-    //   this.recipes.slice((this.currentPage-1)*this.pageSize,(this.currentPage * this.pageSize)-1)
+    return clonedRecipes.slice(startIndex, endIndex);
   }
 
-  getRecipeSlice(recipes, currentPage) {
-    return recipes.slice(
-      (currentPage - 1) * this.pageSize,
-      currentPage * this.pageSize - 1
-    );
-  }
-  // PERNEIS TO SLICE TOU RECIPES ANALOGA APO TO CURRENT PAGE
-  // PX EAN currentPage = 1 => SLICE TOU ARRAY 0-9;
-  // PX EAN currentPage = 3 => SLICE TOU ARRAY 20-29;
-  // return [];
 }
