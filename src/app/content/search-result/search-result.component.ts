@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { Component, Input, OnInit } from '@angular/core';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export interface Recipe {
   id: string;
@@ -25,8 +25,8 @@ export class SearchResult implements OnInit {
 
   ngOnInit() {
     this.maxPage = Math.ceil(this.recipes.length / this.pageSize);
-    console.log(this.recipes)
-    console.log(this.maxPage)
+    console.log(this.recipes);
+    console.log(this.maxPage);
   }
 
   decrementCurrentPage(): void {
@@ -40,9 +40,7 @@ export class SearchResult implements OnInit {
   getPaginatedResults(): Recipe[] {
     const clonedRecipes = [...this.recipes];
     const startIndex = (this.currentPage - 1) * this.pageSize;
-    const endIndex = this.currentPage * this.pageSize - 1;
-
+    const endIndex = this.currentPage * this.pageSize;
     return clonedRecipes.slice(startIndex, endIndex);
   }
-
 }

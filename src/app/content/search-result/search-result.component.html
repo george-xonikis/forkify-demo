@@ -4,7 +4,7 @@
 >
   <!-- Recipes -->
 
-  <h3> Total: {{ recipes.length }} </h3>
+  <h3>Total: {{ recipes.length }}</h3>
 
   <div
     *ngFor="let recipe of getPaginatedResults()"
@@ -33,7 +33,7 @@
   >
     <!-- Previous Page -->
     <button
-      *ngIf="currentPage > 1"
+      [ngStyle]="{ visibility: currentPage > 1 ? 'visible' : 'hidden' }"
       class="bg-slate-200 text-amber-500 font-bold py-1 rounded-full w-32"
       (click)="decrementCurrentPage()"
     >
