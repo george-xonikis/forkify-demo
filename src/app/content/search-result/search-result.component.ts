@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { PASTA_RECIPES } from './mock-recipes';
+import {Component, Input, OnInit} from '@angular/core';
+import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
-interface Recipe {
+export interface Recipe {
   id: string;
   image_url: string;
   publisher: string;
@@ -15,7 +14,8 @@ interface Recipe {
   styleUrls: ['./search-result.component.scss'],
 })
 export class SearchResult implements OnInit {
-  readonly recipes: Recipe[] = PASTA_RECIPES;
+  @Input() recipes: Recipe[] = [];
+
   currentPage: number = 1;
   pageSize: number = 10;
   maxPage!: number;
@@ -25,9 +25,9 @@ export class SearchResult implements OnInit {
 
   ngOnInit() {
     this.maxPage = Math.ceil(this.recipes.length / this.pageSize);
+    console.log(this.recipes)
+    console.log(this.maxPage)
   }
-
-
 
   decrementCurrentPage(): void {
     this.currentPage--;

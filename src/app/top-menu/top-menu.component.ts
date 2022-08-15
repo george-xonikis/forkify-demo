@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { faPenToSquare, faBookmark } from '@fortawesome/free-regular-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import {HttpClient} from "@angular/common/http";
-import {catchError, EMPTY, map, pluck, tap} from "rxjs";
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {faPenToSquare, faBookmark} from '@fortawesome/free-regular-svg-icons';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-top-menu',
@@ -10,51 +8,25 @@ import {catchError, EMPTY, map, pluck, tap} from "rxjs";
   styleUrls: ['./top-menu.component.scss'],
 })
 export class TopMenuComponent implements OnInit {
+  @Output() searchTextChanged = new EventEmitter<string>();
+  @Output() searchButtonClicked = new EventEmitter<boolean>();
+
   PenToSquare = faPenToSquare;
   bookmark = faBookmark;
   MagnifyingGlass = faMagnifyingGlass;
 
-  searchText: string = '';
-
-  constructor(private http: HttpClient) {
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {}
-
-  updateSearchTextValue(text: string) {
-    this.searchText = text;
-    console.log(this.searchText);
+  updateSearchTextValue(text: string): void {
+    this.searchTextChanged.emit(text);
   }
 
-  getResults(event: Event) {
+  onSearchButtonClicked(event: Event) {
     event.preventDefault();
-
-    console.log('Clicked')
-
-    this.http
-      .get<{ count: number, recipes: any[] }>(`https://forkify-api.herokuapp.com/api/search?q=${this.searchText}`)
-      .pipe(
-        pluck('recipes'),
-
-        // map((recipes: any[]) => {
-        //   const newTitle = 'My recipe';
-        //   recipes[0].title = newTitle;
-        //
-        //   return recipes;
-        // }),
-
-        catchError(
-          err => {
-            console.log(err)
-            alert(err.error.error);
-            return EMPTY;
-          }
-        ),
-
-        tap((recipes: any[]) => alert(recipes[0].title))
-
-      )
-      .subscribe();
+    this.searchButtonClicked.emit(true);
   }
+
+
 
 }

@@ -1,7 +1,9 @@
 <div class="container">
-  <app-top-menu></app-top-menu>
+  <app-top-menu (searchButtonClicked)="getResults()"
+                (searchTextChanged)="onSearchTextChanged($event)"
+  ></app-top-menu>
 
-  <app-content></app-content>
+  <app-content [recipes]="recipes"></app-content>
 
   <app-footer></app-footer>
 </div>
