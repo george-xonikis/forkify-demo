@@ -24,9 +24,8 @@ export class SearchResult implements OnInit {
   arrowRight = faArrowRight;
 
   ngOnInit() {
-    this.maxPage = Math.ceil(this.recipes.length / this.pageSize);
-    console.log(this.recipes);
-    console.log(this.maxPage);
+    // console.log(this.recipes);
+    // console.log(this.maxPage);
   }
 
   decrementCurrentPage(): void {
@@ -38,6 +37,7 @@ export class SearchResult implements OnInit {
   }
 
   getPaginatedResults(): Recipe[] {
+    this.maxPage = Math.ceil(this.recipes.length / this.pageSize);
     const clonedRecipes = [...this.recipes];
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = this.currentPage * this.pageSize;
