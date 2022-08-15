@@ -1,5 +1,5 @@
 <section
-  class="relative h-fit bg-white rounded-bl-xl py-2"
+  class="relative h-screen bg-white rounded-bl-xl py-2"
   style="border: 1px red solid"
 >
   <!-- Recipes -->
@@ -29,7 +29,8 @@
 
   <!-- Pagination -->
   <div
-    class="flex bottom-8 font-primary text-sm float-right mt-10 mb-10 mx-5 w-10/12 justify-between left-3"
+    *ngIf="recipes.length > 1"
+    class="flex absolute bottom-8 font-primary text-sm float-right mt-10 mb-10 mx-5 w-10/12 justify-between left-3"
   >
     <!-- Previous Page -->
     <button
@@ -54,7 +55,7 @@
 
   <!-- Copyrights -->
   <div
-    class="flex-col bottom-4 left-4 px-8 font-primary text-slate-400"
+    class="flex-col absolute bottom-4 left-4 px-8 font-primary text-slate-400"
     style="clear: both"
   >
     <p class="text-xs">
