@@ -4,7 +4,13 @@ import {
   faClock,
   faBookmark,
 } from '@fortawesome/free-regular-svg-icons';
-import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUserGroup,
+  faCircleMinus,
+  faCirclePlus,
+  faCheck,
+  faArrowRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 export interface RecipeDetails {
   id: string;
@@ -26,6 +32,10 @@ export class RecipeDetailsComponent implements OnInit {
   clock = faClock;
   bookmark = faBookmark;
   persons = faUserGroup;
+  minus = faCircleMinus;
+  plus = faCirclePlus;
+  check = faCheck;
+  arrowRight = faArrowRight;
 
   constructor() {}
 

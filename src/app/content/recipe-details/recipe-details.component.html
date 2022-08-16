@@ -24,7 +24,7 @@
         <img src="/assets/images/header/logo.png" alt="" />
       </figure>
     </div>
-    <div class="absolute -skew-y-6 origin-bottom -rotate-10 text-center">
+    <div class="absolute -skew-y-6 origin-bottom -rotate-10">
       <h1 class="uppercase">
         <span
           class="p-2 box-decoration-slice bg-gradient-to-r from-orange-400 to-orange-200 text-white text-xl -skew-y-6 origin-bottom -rotate-12"
@@ -35,39 +35,46 @@
   </div>
 
   <!-- Cooking time , Servings & Bookmark button -->
-  <div class="flex justify-between bg-slate-300 h-1/6 items-center">
-    <div class="flex pl-16 space-x-2">
-      <fa-icon [icon]="clock" class="text-orange-300 text-lg"></fa-icon>
-      <h4 class="uppercase font-thin">45 minutes</h4>
+  <div class="flex bg-gray-50 h-16 items-center text-sm">
+    <div class="flex space-x-6">
+      <div class="flex pl-16 space-x-2">
+        <fa-icon [icon]="clock" class="text-orange-300"></fa-icon>
+        <h4 class="uppercase font-thin">45 minutes</h4>
+      </div>
+      <div class="flex space-x-2">
+        <fa-icon [icon]="persons" class="text-orange-300"></fa-icon>
+        <h4 class="uppercase font-thin">4 servings</h4>
+        <div class="space-x-1">
+          <button>
+            <fa-icon [icon]="minus" class="text-orange-300"></fa-icon>
+          </button>
+          <button>
+            <fa-icon [icon]="plus" class="text-orange-300"></fa-icon>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="flex space-x-2">
-      <fa-icon [icon]="persons" class="text-orange-300 text-lg"></fa-icon>
-      <h4 class="uppercase font-thin">4 servings</h4>
-    </div>
+
     <div
-      class="flex bg-gradient-to-r from-orange-400 to-orange-200 rounded-full h-10 w-10 text-center justify-center"
+      class="flex absolute right-10 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full h-10 w-10 text-center justify-center"
     >
       <button class="">
-        <fa-icon [icon]="bookmark" class="text-white text-xl"></fa-icon>
-      </button>
-      <button>
-        <fa-icon class="text-blue-500 text-lg"></fa-icon>
-      </button>
-    </div>
-    <div>
-      <button>
-        <fa-icon class="text-red-300 text-lg"></fa-icon>
+        <fa-icon [icon]="bookmark" class="text-white text-lg"></fa-icon>
       </button>
     </div>
   </div>
 
   <!-- Recipe Ingredients details -->
-  <div>
-    <div><h2 class="text-red-400 uppercase">Recipe Ingredients</h2></div>
+  <div class="h-56 flex-col items-center" style="border: 1px red solid">
     <div>
+      <h2 class="text-center my-4 text-orange-300 uppercase">
+        Recipe Ingredients
+      </h2>
+    </div>
+    <div class="text-xs">
       <ul>
-        <li>
-          <fa-icon class="text-red-300 text-lg"></fa-icon>
+        <li class="flex space-x-2">
+          <fa-icon [icon]="check" class="text-orange-300"></fa-icon>
           <p>1 onion chopped</p>
         </li>
       </ul>
@@ -78,18 +85,21 @@
 
   <div>
     <div>
-      <h2 class="text-red-400 uppercase">How to cook it</h2>
+      <h2 class="text-center my-4 text-orange-300 uppercase">How to cook it</h2>
     </div>
-    <div>
+    <div class="font-light text-xs text-center px-20 py-3">
       <p>
         This recipe was carefully designed and tested by
-        <span>PUBLISHER</span>. Please check out directions at their website.
+        <span class="font-semibold">PUBLISHER</span>. Please check out
+        directions at their website.
       </p>
     </div>
-    <div>
-      <button>
+    <div class="text-center text-sm">
+      <button
+        class="text-center bg-gradient-to-r from-orange-400 to-orange-200 hover:bg-amber-500 text-white py-2 px-4 rounded-full"
+      >
         <span>Directions</span>
-        <fa-icon arrowRight class="ml-4"></fa-icon>
+        <fa-icon [icon]="arrowRight" class="pl-2 text-xs"></fa-icon>
       </button>
     </div>
   </div>
