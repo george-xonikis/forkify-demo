@@ -1,6 +1,5 @@
 <Section
   class="h-screen font-primary font-bold rounded-br-xl text-zinc-500 bg-zinc-100"
-  style="border: 1px red solid"
 >
   <!-- Message  -->
   <!-- <div class="flex max-w-xl my-0 py-20 px-16 my6 mx-16">
@@ -21,16 +20,16 @@
   <div class="h-1/3">
     <div>
       <figure class="w-fit h-fit">
-        <img [src]="recipeDetails?.image_url" alt="" />
+        <img [src]="recipeDetails.image_url" alt="" />
       </figure>
     </div>
     <div class="absolute -skew-y-6 origin-bottom -rotate-10">
       <h1 class="uppercase">
         <span
-          class="p-2 box-decoration-slice bg-gradient-to-r from-orange-400 to-orange-200 text-white text-xl -skew-y-6 origin-bottom -rotate-12">
-          {{ recipeDetails?.title || 'Title' }}
-        </span
+          class="p-2 box-decoration-slice bg-gradient-to-r from-orange-400 to-orange-200 text-white text-xl -skew-y-6 origin-bottom -rotate-12"
         >
+          {{ recipeDetails.title || "Title" }}
+        </span>
       </h1>
     </div>
   </div>
@@ -40,11 +39,15 @@
     <div class="flex space-x-6">
       <div class="flex pl-16 space-x-2">
         <fa-icon [icon]="clock" class="text-orange-300"></fa-icon>
-        <h4 class="uppercase font-thin">45 minutes</h4>
+        <h4 class="uppercase font-thin">
+          {{ recipeDetails.cooking_time }} minutes
+        </h4>
       </div>
       <div class="flex space-x-2">
         <fa-icon [icon]="persons" class="text-orange-300"></fa-icon>
-        <h4 class="uppercase font-thin">4 servings</h4>
+        <h4 class="uppercase font-thin">
+          {{ recipeDetails.servings }} servings
+        </h4>
         <div class="space-x-1">
           <button>
             <fa-icon [icon]="minus" class="text-orange-300"></fa-icon>
@@ -72,11 +75,14 @@
         Recipe Ingredients
       </h2>
     </div>
-    <div class="text-xs">
+    <div class="text-xs" *ngFor="let ingredient of recipeDetails.ingredients">
       <ul>
         <li class="flex space-x-2">
           <fa-icon [icon]="check" class="text-orange-300"></fa-icon>
-          <p>1 onion chopped</p>
+          <p>
+            {{ ingredient.quantity }} {{ ingredient.unit }}
+            {{ ingredient.description }}
+          </p>
         </li>
       </ul>
     </div>

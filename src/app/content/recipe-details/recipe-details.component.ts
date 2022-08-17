@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   faFaceSmile,
   faClock,
@@ -13,7 +13,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 interface Ingredient {
-
+  quantity: number;
+  unit: string;
+  description: string;
 }
 
 export interface RecipeDetails {
