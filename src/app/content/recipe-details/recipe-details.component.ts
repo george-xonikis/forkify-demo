@@ -12,6 +12,10 @@ import {
   faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 
+interface Ingredient {
+
+}
+
 export interface RecipeDetails {
   id: string;
   title: string;
@@ -19,7 +23,8 @@ export interface RecipeDetails {
   sourceUrl: string;
   image_url: string;
   servings: number;
-  ingredients: string;
+  cooking_time: number;
+  ingredients: Ingredient[];
 }
 
 @Component({
