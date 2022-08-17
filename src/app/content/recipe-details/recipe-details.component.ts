@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {
   faFaceSmile,
   faClock,
@@ -28,6 +28,8 @@ export interface RecipeDetails {
   styleUrls: ['./recipe-details.component.scss'],
 })
 export class RecipeDetailsComponent implements OnInit {
+  @Input() recipeDetails!: RecipeDetails;
+
   smileFace = faFaceSmile;
   clock = faClock;
   bookmark = faBookmark;

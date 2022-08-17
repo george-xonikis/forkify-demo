@@ -21,14 +21,15 @@
   <div class="h-1/3">
     <div>
       <figure class="w-fit h-fit">
-        <img src="/assets/images/header/logo.png" alt="" />
+        <img [src]="recipeDetails?.image_url" alt="" />
       </figure>
     </div>
     <div class="absolute -skew-y-6 origin-bottom -rotate-10">
       <h1 class="uppercase">
         <span
-          class="p-2 box-decoration-slice bg-gradient-to-r from-orange-400 to-orange-200 text-white text-xl -skew-y-6 origin-bottom -rotate-12"
-          >Pizza Casserole</span
+          class="p-2 box-decoration-slice bg-gradient-to-r from-orange-400 to-orange-200 text-white text-xl -skew-y-6 origin-bottom -rotate-12">
+          {{ recipeDetails?.title || 'Title' }}
+        </span
         >
       </h1>
     </div>

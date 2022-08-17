@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export interface Recipe {
@@ -15,6 +15,7 @@ export interface Recipe {
 })
 export class SearchResult implements OnInit {
   @Input() recipes: Recipe[] = [];
+  @Output() recipeResultClicked = new EventEmitter<Recipe>();
 
   currentPage: number = 1;
   pageSize: number = 10;
@@ -43,4 +44,9 @@ export class SearchResult implements OnInit {
     const endIndex = this.currentPage * this.pageSize;
     return clonedRecipes.slice(startIndex, endIndex);
   }
+
+  onRecipeResultClicked(recipe: Recipe): void {
+    this.recipeResultClicked.emit(recipe);
+  }
+
 }

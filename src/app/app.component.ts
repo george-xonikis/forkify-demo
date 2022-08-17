@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
 
   getResults() {
     this.http
-      .get<{ count: number, recipes: any[] }>(`https://forkify-api.herokuapp.com/api/search?q=${this.searchText}`)
+      .get<{ count: number, data: { recipes: Recipe[] } }>(`https://forkify-api.herokuapp.com/api/v2/recipes/?search=${this.searchText}&key=8d488d17-fae0-474f-a48f-b7eab7d8c578`)
       .pipe(
-        pluck('recipes'),
+        pluck('data', 'recipes'),
 
         catchError(
           err => {
